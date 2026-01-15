@@ -351,10 +351,12 @@ body {
 }
 
 .gradient-text {
-  background: var(--primary-gradient);
+  /* Temporarily using solid color to ensure visibility */
+  color: #ffffff !important;
+  /* background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text; */
 }
 
 .hero-subtitle {

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start index.html)",
+      "Bash(start index-glass.html)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nOverhaul portfolio with modern glassmorphism design and updated content\n\nMajor Updates:\n- Added new glassmorphism-themed portfolio \\(index-glass.html\\)\n- Updated content to reflect current role as Data Scientist at ARGO Data\n- Highlighted 4+ years of experience in ML/Computer Vision/Fraud Detection\n- Showcased key achievements: 75% OCR performance boost, architectural redesigns, revenue-generating tools\n\nDesign Improvements:\n- Modern dark theme with frosted glass effects and gradient backgrounds\n- Animated gradient blobs with parallax scrolling\n- Smooth hover effects and transitions\n- Fully responsive design\n- Enhanced readability with proper text alignment\n\nContent Updates:\n- Current role: Data Scientist I \\(Jan 2023 - Present\\)\n- Previous role: Software Engineer \\(Jan 2021 - Dec 2022\\)\n- Updated education section with completed MS in Computer Science \\(2020\\)\n- Comprehensive skills categorization \\(ML/AI, Computer Vision, Software Engineering, Data Science\\)\n- Updated location to Dallas-Fort Worth Metroplex, Texas\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
+    ]
+  }
+}
