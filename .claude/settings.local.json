@@ -9,7 +9,8 @@
       "Bash(git commit:*)",
       "Bash(git push)",
       "Bash(start C:UserswasifDocumentsProjectswasifarmanhaque.github.ioindex.html)",
-      "Bash(start \"C:\\\\Users\\\\wasif\\\\Documents\\\\Projects\\\\wasifarmanhaque.github.io\\\\index.html\")"
+      "Bash(start \"C:\\\\Users\\\\wasif\\\\Documents\\\\Projects\\\\wasifarmanhaque.github.io\\\\index.html\")",
+      "Bash(python:*)"
     ]
   }
 }
