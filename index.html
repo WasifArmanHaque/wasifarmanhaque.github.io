@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +14,16 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" type="image/svg+xml" href="images/wh-favicon.svg">
 
 	<!-- Glassmorphism Theme -->
 	<link rel="stylesheet" href="css/glassmorphism.css">
 </head>
 <body>
+	<div class="page-loader" id="pageLoader" aria-hidden="true">
+		<div class="loader-mark">WH</div>
+	</div>
+
 	<!-- Animated Background -->
 	<div class="bg-animation">
 		<div class="gradient-blob blob-1"></div>
@@ -30,17 +35,24 @@
 	<nav class="glass-nav">
 		<div class="nav-container">
 			<div class="nav-logo">WH</div>
-			<ul class="nav-menu">
-				<li><a href="#home" class="nav-link active">Home</a></li>
-				<li><a href="#about" class="nav-link">About</a></li>
-				<li><a href="#experience" class="nav-link">Experience</a></li>
-				<li><a href="#interactive" class="nav-link">Interactive</a></li>
+			<button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+				<ul class="nav-menu" id="primary-nav">
+					<li><a href="#home" class="nav-link active">Home</a></li>
+					<li><a href="#about" class="nav-link">About</a></li>
+					<li><a href="#wins" class="nav-link">Wins</a></li>
+					<li><a href="#experience" class="nav-link">Experience</a></li>
+					<li><a href="#interactive" class="nav-link">Interactive</a></li>
 				<li><a href="#skills" class="nav-link">Skills</a></li>
+				<li><a href="#education" class="nav-link">Education</a></li>
 				<li><a href="#contact" class="nav-link">Contact</a></li>
 			</ul>
 			<div class="nav-social">
-				<a href="https://www.linkedin.com/in/wasifhaque" target="_blank"><i class="fab fa-linkedin"></i></a>
-				<a href="https://www.github.com/wasifarmanhaque" target="_blank"><i class="fab fa-github"></i></a>
+				<a href="https://www.linkedin.com/in/wasifhaque" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+				<a href="https://www.github.com/wasifarmanhaque" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
 			</div>
 		</div>
 	</nav>
@@ -55,15 +67,23 @@
 						<span class="status-dot"></span> Available for opportunities
 					</div>
 				</div>
-				<div class="hero-text">
-					<h1 class="hero-title" style="color: #ffffff; font-size: 4rem; font-weight: 900; margin-bottom: 1rem;">
-						Wasif Haque
-					</h1>
-					<h2 class="hero-subtitle">Data Scientist | ML Engineer | Computer Vision Specialist</h2>
-					<p class="hero-tagline">
-						Transforming research breakthroughs into production-ready ML systems that solve real-world fraud detection challenges
-					</p>
-					<div class="hero-stats glass-card">
+					<div class="hero-text">
+						<h1 class="hero-title" style="color: #ffffff; font-size: 4rem; font-weight: 900; margin-bottom: 1rem;">
+							Wasif Haque
+						</h1>
+						<h2 class="hero-subtitle">Data Scientist | ML Engineer | Computer Vision Specialist</h2>
+						<p class="hero-positioning">
+							I build fraud-detection ML systems that are explainable to stakeholders and reliable in production.
+						</p>
+						<p class="hero-tagline">
+							From model design to deployment, I focus on measurable impact: faster pipelines, fewer false positives, and maintainable architecture.
+						</p>
+						<div class="proof-strip glass-card">
+							<a href="#case-models" class="proof-pill"><strong>10+</strong> models in production</a>
+							<a href="#case-ocr" class="proof-pill"><strong>75%</strong> OCR speedup shipped</a>
+							<a href="#case-client" class="proof-pill">Client-critical fixes delivered</a>
+						</div>
+						<div class="hero-stats glass-card highlight-card">
 						<div class="stat-item">
 							<div class="stat-number">4+</div>
 							<div class="stat-label">Years Experience</div>
@@ -92,6 +112,37 @@
 		</div>
 	</section>
 
+	<!-- Selected Wins Section -->
+	<section id="wins" class="section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Selected Wins</span>
+				<h2 class="section-title">Impact Highlights</h2>
+				<p class="section-description">Three examples of how I turn model work into measurable business outcomes.</p>
+			</div>
+			<div class="wins-grid">
+				<article class="glass-card win-card" id="case-models">
+					<h3><i class="fas fa-cubes"></i> Production Model Delivery</h3>
+					<p><strong>Problem:</strong> Fraud signals were fragmented across separate tools and hard to operationalize.</p>
+					<p><strong>Approach:</strong> Built deployable models for handwriting verification, signature forgery, and field extraction with shared evaluation standards.</p>
+					<p><strong>Outcome:</strong> Shipped <strong>10+ production models</strong> and reduced handoff friction between research and engineering.</p>
+				</article>
+				<article class="glass-card win-card" id="case-ocr">
+					<h3><i class="fas fa-gauge-high"></i> OCR Throughput Optimization</h3>
+					<p><strong>Problem:</strong> OCR latency constrained fraud-review throughput and customer responsiveness.</p>
+					<p><strong>Approach:</strong> Reworked pipeline bottlenecks, optimized model ordering, and tuned queue processing based on production traces.</p>
+					<p><strong>Outcome:</strong> Delivered a <strong>75% processing-time reduction</strong> with faster downstream fraud decisions.</p>
+				</article>
+				<article class="glass-card win-card" id="case-client">
+					<h3><i class="fas fa-handshake-angle"></i> High-Stakes Client Recovery</h3>
+					<p><strong>Problem:</strong> Enterprise clients faced elevated false positives affecting operations and trust.</p>
+					<p><strong>Approach:</strong> Led direct diagnostics with stakeholders, identified root-cause thresholds/features, and shipped targeted fixes quickly.</p>
+					<p><strong>Outcome:</strong> Stabilized client performance and improved confidence in production fraud decisions.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
 	<!-- About Section -->
 	<section id="about" class="section">
 		<div class="container">
@@ -100,24 +151,17 @@
 				<h2 class="section-title">About Me</h2>
 			</div>
 			<div class="about-content">
-				<div class="glass-card about-card">
-					<h3>What Drives Me</h3>
-					<p>
-						Data Scientist with <strong>4+ years of experience</strong> bridging the gap between research and production systems.
-						I specialize in developing and deploying machine learning solutions for <strong>document fraud detection</strong>,
-						with deep expertise in computer vision, deep learning, and system architecture.
-					</p>
-					<p>
-						I've progressed from implementing research outcomes to independently designing ML models, leading architectural initiatives,
-						and mentoring team members. I thrive at the intersection of research and engineering—there's something deeply satisfying
-						about taking a promising research prototype and transforming it into a robust, performant system that delivers real value.
-					</p>
-					<p>
-						Whether it's shaving <strong>75% off processing time</strong>, architecting systems for maintainability, or sitting down
-						with a customer to solve their fraud detection challenges—I'm motivated by impact. Passionate about building performant,
-						maintainable systems that solve real business problems.
-					</p>
-				</div>
+					<div class="glass-card about-card">
+						<h3>What Drives Me</h3>
+						<p>
+							I'm a Data Scientist with <strong>4+ years of experience</strong> turning research ideas into production systems.
+							My focus is <strong>document fraud detection</strong> across computer vision, deep learning, and platform engineering.
+						</p>
+						<p>
+							I care about work that ships and stays useful: reducing processing time by <strong>75%</strong>, improving model quality in the field,
+							and building systems teams can maintain as requirements evolve.
+						</p>
+					</div>
 
 				<div class="expertise-grid">
 					<div class="glass-card expertise-item">
@@ -177,54 +221,52 @@
 						</div>
 						<div class="timeline-description">
 							<p class="role-summary">
-								I develop and deploy machine learning systems for check fraud detection, working across
-								the full ML lifecycle from research to production.
+								I own end-to-end ML delivery for check fraud detection, from research to production rollout.
 							</p>
-							<h4>Key Contributions:</h4>
-							<ul class="contributions-list">
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Built end-to-end fraud detection models including <strong>Siamese CNNs</strong> for handwriting verification,
-									signature forgery detection using Random Forest with custom image features, and <strong>YOLO-based object detection</strong>
-									for check field extraction
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Led major architectural redesign transforming the image analysis application from depth-first to
-									<strong>feature graph-based architecture</strong>, then refactored to plugin-based system—dramatically improving
-									maintainability and extensibility
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Achieved <strong>75% reduction in OCR processing time</strong> through strategic pipeline optimization,
-									making our solution competitive in the market
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Created queue optimization tool that analyzes thousands of configurations to reduce false positives
-									while maximizing fraud capture. This became a <strong>paid service offering generating new revenue streams</strong>
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Delivered multiple high-stakes customer engagements, diagnosing false positive issues, presenting
-									findings directly to clients (including Shinhan Bank), and implementing fixes with quick turnaround
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Mentored junior data scientists and interns, helping them translate research code into production-ready systems
-								</li>
-							</ul>
-							<div class="tech-stack">
-								<span class="tech-tag">Python</span>
-								<span class="tech-tag">PyTorch</span>
-								<span class="tech-tag">OpenCV</span>
-								<span class="tech-tag">Tesseract</span>
-								<span class="tech-tag">Azure OCR</span>
-								<span class="tech-tag">TrOCR</span>
-								<span class="tech-tag">PaddleOCR</span>
-								<span class="tech-tag">YOLO</span>
-								<span class="tech-tag">scikit-learn</span>
-							</div>
+							<details class="role-details">
+								<summary>Show details</summary>
+								<h4>Key Contributions:</h4>
+								<ul class="contributions-list">
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Developed production models for handwriting verification (<strong>Siamese CNNs</strong>), signature forgery (Random Forest), and
+										<strong>YOLO-based</strong> check field extraction
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Led an architecture migration to a <strong>feature graph + plugin model</strong>, improving maintainability and feature delivery speed
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Achieved <strong>75% reduction in OCR processing time</strong> through strategic pipeline optimization,
+										making our solution competitive in the market
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Built a queue-optimization tool that explored thousands of configurations to reduce false positives while preserving fraud capture;
+										the tool became a <strong>paid customer service offering</strong>
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Resolved high-stakes client false-positive issues through direct analysis, stakeholder presentations, and rapid corrective releases
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Mentored junior data scientists and interns, helping them translate research code into production-ready systems
+									</li>
+								</ul>
+								<div class="tech-stack">
+									<span class="tech-tag">Python</span>
+									<span class="tech-tag">PyTorch</span>
+									<span class="tech-tag">OpenCV</span>
+									<span class="tech-tag">Tesseract</span>
+									<span class="tech-tag">Azure OCR</span>
+									<span class="tech-tag">TrOCR</span>
+									<span class="tech-tag">PaddleOCR</span>
+									<span class="tech-tag">YOLO</span>
+									<span class="tech-tag">scikit-learn</span>
+								</div>
+							</details>
 						</div>
 					</div>
 				</div>
@@ -244,38 +286,36 @@
 						</div>
 						<div class="timeline-description">
 							<p class="role-summary">
-								Served as the technical bridge between the R&D team and software development, implementing
-								analytical enhancements into the core Java fraud detection platform.
+								Bridged R&D and engineering by integrating analytical improvements into the core Java fraud platform.
 							</p>
-							<h4>Key Contributions:</h4>
-							<ul class="contributions-list">
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Modernized model execution framework by replacing PMML with <strong>M2cgen</strong> for
-									improved analytical model deployment
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Optimized fraud detection performance by implementing <strong>Bloom filter solution</strong>
-									for duplicate check detection, eliminating expensive database lookups
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Enhanced detection algorithms including clustering improvements for transaction anomaly
-									detection and regression tuning for serial number validation
-								</li>
-								<li>
-									<i class="fas fa-check-circle"></i>
-									Initiated ML research that led to development of handwriting style verification—my prototype's
-									accuracy greenlit full-scale check alteration detection development
-								</li>
-							</ul>
-							<div class="tech-stack">
-								<span class="tech-tag">Java</span>
-								<span class="tech-tag">Spring Boot</span>
-								<span class="tech-tag">Python</span>
-								<span class="tech-tag">SQL</span>
-							</div>
+							<details class="role-details">
+								<summary>Show details</summary>
+								<h4>Key Contributions:</h4>
+								<ul class="contributions-list">
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Replaced PMML with <strong>M2cgen</strong> to modernize model execution and deployment
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Implemented a <strong>Bloom filter</strong> for duplicate-check detection, removing expensive database lookups
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Improved anomaly clustering and serial-number validation through targeted model and threshold tuning
+									</li>
+									<li>
+										<i class="fas fa-check-circle"></i>
+										Prototyped handwriting-style verification that established the baseline for full check-alteration detection development
+									</li>
+								</ul>
+								<div class="tech-stack">
+									<span class="tech-tag">Java</span>
+									<span class="tech-tag">Spring Boot</span>
+									<span class="tech-tag">Python</span>
+									<span class="tech-tag">SQL</span>
+								</div>
+							</details>
 						</div>
 					</div>
 				</div>
@@ -294,11 +334,14 @@
 							</span>
 						</div>
 						<div class="timeline-description">
-							<ul class="contributions-list">
-								<li><i class="fas fa-check-circle"></i> Assisted in teaching and grading for graduate-level computer science courses</li>
-								<li><i class="fas fa-check-circle"></i> Held office hours to provide academic support to students</li>
-								<li><i class="fas fa-check-circle"></i> Courses: Advanced Algorithms Design & Analysis, Software Engineering</li>
-							</ul>
+							<details class="role-details">
+								<summary>Show details</summary>
+								<ul class="contributions-list">
+									<li><i class="fas fa-check-circle"></i> Assisted in teaching and grading for graduate-level computer science courses</li>
+									<li><i class="fas fa-check-circle"></i> Held office hours to provide academic support to students</li>
+									<li><i class="fas fa-check-circle"></i> Courses: Advanced Algorithms Design & Analysis, Software Engineering</li>
+								</ul>
+							</details>
 						</div>
 					</div>
 				</div>
@@ -372,8 +415,8 @@
 				</div>
 			</div>
 
-			<!-- Generative Art Engine -->
-			<div class="glass-card demo-card">
+				<!-- Generative Art Engine -->
+				<div class="glass-card demo-card">
 				<div class="demo-header">
 					<h3><i class="fas fa-palette"></i> Generative Art Engine</h3>
 					<p>Create unique algorithmic art with mathematical patterns. Each generation is one-of-a-kind.</p>
@@ -440,10 +483,80 @@
 							</div>
 						</div>
 					</div>
+					</div>
+				</div>
+
+				<!-- Fraud Threshold Simulator -->
+				<div class="glass-card demo-card">
+					<div class="demo-header">
+						<h3><i class="fas fa-shield-virus"></i> Fraud Threshold Simulator</h3>
+						<p>Tune the decision threshold and see precision, recall, review load, and expected business cost update in real time.</p>
+						<p class="demo-why">Why it matters: threshold tuning is where model quality becomes real-world fraud capture vs. false-positive pain.</p>
+					</div>
+
+					<div class="demo-content">
+						<div class="demo-controls">
+							<div class="control-group">
+								<label>Decision Threshold</label>
+								<input type="range" id="fraudThreshold" min="1" max="99" value="72" class="slider">
+								<span id="fraudThresholdValue" class="value-display">0.72</span>
+							</div>
+
+							<div class="control-group">
+								<label>Fraud Rate</label>
+								<input type="range" id="fraudRate" min="1" max="25" value="8" class="slider">
+								<span id="fraudRateValue" class="value-display">8%</span>
+							</div>
+
+							<div class="control-group">
+								<label>Daily Transaction Volume</label>
+								<input type="range" id="dailyVolume" min="1000" max="50000" step="500" value="12000" class="slider">
+								<span id="dailyVolumeValue" class="value-display">12,000</span>
+							</div>
+
+							<div class="control-group">
+								<label>False Positive Cost</label>
+								<input type="range" id="fpCost" min="1" max="50" value="8" class="slider">
+								<span id="fpCostValue" class="value-display">$8</span>
+							</div>
+
+							<div class="control-group">
+								<label>False Negative Cost</label>
+								<input type="range" id="fnCost" min="50" max="1000" step="10" value="220" class="slider">
+								<span id="fnCostValue" class="value-display">$220</span>
+							</div>
+						</div>
+
+						<div class="demo-visualization">
+							<canvas id="fraudThresholdCanvas"></canvas>
+							<div class="threshold-legend">
+								<span><i class="legend-dot nonfraud"></i> Legitimate</span>
+								<span><i class="legend-dot fraud"></i> Fraud</span>
+								<span><i class="legend-dot cutoff"></i> Threshold</span>
+							</div>
+							<div class="threshold-info">
+								<div class="info-item">
+									<span class="info-label">Precision</span>
+									<span class="info-value" id="precisionValue">-</span>
+								</div>
+								<div class="info-item">
+									<span class="info-label">Recall</span>
+									<span class="info-value" id="recallValue">-</span>
+								</div>
+								<div class="info-item">
+									<span class="info-label">False Positives / Day</span>
+									<span class="info-value" id="falsePositivesValue">-</span>
+								</div>
+								<div class="info-item">
+									<span class="info-label">Expected Cost / Day</span>
+									<span class="info-value" id="businessCostValue">-</span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 	<!-- Skills Section -->
 	<section id="skills" class="section">
@@ -580,14 +693,14 @@
 						<i class="fab fa-linkedin"></i>
 						<div>
 							<h4>LinkedIn</h4>
-							<a href="https://www.linkedin.com/in/wasifhaque" target="_blank">linkedin.com/in/wasifhaque</a>
+							<a href="https://www.linkedin.com/in/wasifhaque" target="_blank" rel="noopener noreferrer">linkedin.com/in/wasifhaque</a>
 						</div>
 					</div>
 					<div class="contact-item">
 						<i class="fab fa-github"></i>
 						<div>
 							<h4>GitHub</h4>
-							<a href="https://www.github.com/wasifarmanhaque" target="_blank">github.com/wasifarmanhaque</a>
+							<a href="https://www.github.com/wasifarmanhaque" target="_blank" rel="noopener noreferrer">github.com/wasifarmanhaque</a>
 						</div>
 					</div>
 				</div>
@@ -625,6 +738,7 @@
 	<!-- Footer -->
 	<footer class="footer">
 		<div class="container">
+			<div class="footer-mark">WH</div>
 			<p>&copy; 2026 Wasif Haque. Built with passion for clean code and great design.</p>
 		</div>
 	</footer>
@@ -633,5 +747,6 @@
 	<script src="js/glassmorphism.js"></script>
 	<script src="js/neural-network.js"></script>
 	<script src="js/generative-art.js"></script>
+	<script src="js/fraud-threshold-simulator.js"></script>
 </body>
 </html>
